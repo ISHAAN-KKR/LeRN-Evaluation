@@ -1,8 +1,5 @@
-Sure, here's a basic README template that you can use for your project:
 
----
-
-# Project Name
+# LeRN-Evaluation
 
 ## Overview
 Briefly describe the purpose and functionality of your project.
