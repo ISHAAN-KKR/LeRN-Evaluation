@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrepreneurship Skills Evaluation</title>
+</head>
+<body>
+    <h1>Entrepreneurship Skills Evaluation</h1>
+    <form id="evaluation-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="paragraph">Paragraph:</label>
+        <textarea id="paragraph" name="paragraph" rows="10" cols="50" required></textarea><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('evaluation-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            
+            fetch('/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    document.getElementById('result').innerText = 'Error: ' + data.error;
+                } else {
+                    document.getElementById('result').innerText = 'Evaluation: ' + data.evaluation;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
