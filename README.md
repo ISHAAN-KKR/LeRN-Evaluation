@@ -2,7 +2,7 @@
 # LeRN-Evaluation
 
 ## Overview
-Briefly describe the purpose and functionality of your project.
+Evaluates Entrepreneur's pitching skill using Data Analytics.
 
 ## Table of Contents
 1. [Technologies Used](#technologies-used)
